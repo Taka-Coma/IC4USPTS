@@ -5,7 +5,7 @@ import pickle
 from scipy.sparse import vstack
 
 ### Classification
-from mmensemble import MLEnsembleClassifier as MLE
+from _mlensemble import MLEnsembleClassifier as MLE
 
 ### Evaluation
 from ..utils.evaluation import calc_scores
