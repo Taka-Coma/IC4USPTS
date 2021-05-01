@@ -5,7 +5,7 @@ import pickle
 from scipy.sparse import vstack
 
 ### Classification
-from _mlensemble import MLEnsembleClassifier as MLE
+from _bem import BEM
 
 ### Evaluation
 from ..utils.evaluation import calc_scores
@@ -16,14 +16,14 @@ def main():
     with open(vec_path, 'rb') as r:
         dataset = pickle.load(r) 
 
-    cls_name = 'mle'
+    cls_name = 'bem'
 
     for i in range(len(dataset)):
         X_test, y_test = dataset[i]
         X_train, y_train = genTrain(dataset, i)
 
-        if cls_name == 'mle':
-            cls = MLE(n_jobs=-1)
+        if cls_name == 'bem':
+            cls = BEM(n_jobs=-1)
             X_train = X_train.toarray()
 
         cls.fit(X_train, y_train)
