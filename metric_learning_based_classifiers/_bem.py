@@ -7,7 +7,7 @@ from sklearn.base import clone
 
 from metric_learn import LMNN
 from imblearn.ensemble import BalancedBaggingClassifier
-from sklearn.ensemble import AdaBoostClassifier
+from sklearn.neighbors import KNeighborsClassifier as kNN
 from sklearn.pipeline import Pipeline
 
 from sklearn.model_selection import train_test_split as split
@@ -17,7 +17,7 @@ class BEM(BalancedBaggingClassifier):
     def __init__(self,
         sampling_strategy='auto',
         metric_learner=LMNN(),
-        base_estimator=AdaBoostClassifier(),
+        base_estimator=kNN(),
         n_jobs=1,
         n_estimators=10
         ):
