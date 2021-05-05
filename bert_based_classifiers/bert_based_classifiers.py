@@ -34,7 +34,7 @@ def main():
 
 
 def test(mname, i=0, init_lr=3e-5):
-    epochs = 10
+    epochs = 20
 
     ### Prepare datasets
     train_df, test_df, pos, neg = loadData(i)
